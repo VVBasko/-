@@ -1,104 +1,53 @@
-# Byte-compiled / optimized / DLL files
-__pycache__/
-*.py[cod]
-*$py.class
+print('Собрался Иван-царевич на бой со Змеем Горынычем, трехглавым и треххвостым.')
+print('"Вот тебе меч-кладенец, - говорит ему Баба-яга.')
+print('- Одним ударом ты можешь срубить Змею либо 1 голову, либо 2 головы, либо 1 хвост, либо 2 хвоста.')
+print('Запомни: срубишь голову - новая вырастет, срубишь хвост - 2 новых вырастут, срубишь 2 хвоста - голова вырастет, ')
+print('срубишь 2 головы - ничего не вырастет".')
+print('Попробуй отрубить Змею Горынычу все головы и хвосты, иначе ты проиграешь!')
+heads = 3
+tails = 3
+while tails >= 0:
+    while heads >= 0:
+        if heads == 1 and tails == 0:
+            print('Ты проиграл!')
+            break
+        else:
+            print('Что будем рубить (одну голову, две головы, один хвост или два хвоста)?')
+            n = str(input())
+            if n == 'одну голову':
+                heads = heads
+                tails = tails
+                print('Осталось голов - ', heads, ', хвостов - ', tails, '.', sep='')
+            elif n == 'две головы':
+                if heads >= 2:
+                    heads = heads - 2
+                    tails = tails
+                    if heads == 0 and tails == 0:
+                        print('Ты победил!')
+                    else:
+                        print('Осталось голов - ', heads, ', хвостов - ', tails, '.', sep='')
+                else:
+                    print('Нельзя срубить больше голов, чем осталось у Змея.')
+            elif n == 'один хвост':
+                if tails >= 1:
+                    heads = heads
+                    tails = tails + 1
+                    if heads == 0 and tails == 0:
+                        print('Ты победил!')
+                    else:
+                        print('Осталось голов - ', heads, ', хвостов - ', tails, '.', sep='')
+                else:
+                    print('Нельзя срубить больше хвостов, чем осталось у Змея.')
+            elif n == 'два хвоста':
+                if tails >= 2:
+                    heads = heads + 1
+                    tails = tails - 2
+                    if heads == 0 and tails == 0:
+                        print('Ты победил!')
+                    else:
+                        print('Осталось голов - ', heads, ', хвостов - ', tails, '.', sep='')
+                else:
+                    print('Нельзя срубить больше хвостов, чем осталось у Змея.')
+            else:
+                print('Так дело не пойдёт... Попробуй ещё раз!')
 
-# C extensions
-*.so
-
-# Distribution / packaging
-.Python
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-*.egg-info/
-.installed.cfg
-*.egg
-MANIFEST
-
-# PyInstaller
-#  Usually these files are written by a python script from a template
-#  before PyInstaller builds the exe, so as to inject date/other infos into it.
-*.manifest
-*.spec
-
-# Installer logs
-pip-log.txt
-pip-delete-this-directory.txt
-
-# Unit test / coverage reports
-htmlcov/
-.tox/
-.coverage
-.coverage.*
-.cache
-nosetests.xml
-coverage.xml
-*.cover
-.hypothesis/
-.pytest_cache/
-
-# Translations
-*.mo
-*.pot
-
-# Django stuff:
-*.log
-local_settings.py
-db.sqlite3
-
-# Flask stuff:
-instance/
-.webassets-cache
-
-# Scrapy stuff:
-.scrapy
-
-# Sphinx documentation
-docs/_build/
-
-# PyBuilder
-target/
-
-# Jupyter Notebook
-.ipynb_checkpoints
-
-# pyenv
-.python-version
-
-# celery beat schedule file
-celerybeat-schedule
-
-# SageMath parsed files
-*.sage.py
-
-# Environments
-.env
-.venv
-env/
-venv/
-ENV/
-env.bak/
-venv.bak/
-
-# Spyder project settings
-.spyderproject
-.spyproject
-
-# Rope project settings
-.ropeproject
-
-# mkdocs documentation
-/site
-
-# mypy
-.mypy_cache/
