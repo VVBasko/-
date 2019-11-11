@@ -10,6 +10,8 @@ while tails >= 0:
     while heads >= 0:
         if heads == 1 and tails == 0:
             print('Ты проиграл!')
+            heads = -1
+            tails = -1
             break
         else:
             print('Что будем рубить (одну голову, две головы, один хвост или два хвоста)?')
@@ -24,6 +26,8 @@ while tails >= 0:
                     tails = tails
                     if heads == 0 and tails == 0:
                         print('Ты победил!')
+                        tails = -1
+                        break
                     else:
                         print('Осталось голов - ', heads, ', хвостов - ', tails, '.', sep='')
                 else:
@@ -34,6 +38,8 @@ while tails >= 0:
                     tails = tails + 1
                     if heads == 0 and tails == 0:
                         print('Ты победил!')
+                        tails = -1
+                        break
                     else:
                         print('Осталось голов - ', heads, ', хвостов - ', tails, '.', sep='')
                 else:
@@ -44,6 +50,8 @@ while tails >= 0:
                     tails = tails - 2
                     if heads == 0 and tails == 0:
                         print('Ты победил!')
+                        tails = -1
+                        break
                     else:
                         print('Осталось голов - ', heads, ', хвостов - ', tails, '.', sep='')
                 else:
